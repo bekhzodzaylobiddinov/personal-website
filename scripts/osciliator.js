@@ -1,3 +1,6 @@
+/* Inspired by https://jacekjeznach.com/ */
+/* This snippet is from https://jacekjeznach.com/wp-content/themes/new/js/vendor/osciliator.js */
+
 export default function initOciliator(remove) {
   if (!remove) {
     var ctx,
@@ -181,9 +184,9 @@ export default function initOciliator(remove) {
       ctx.lineWidth = 1;
 
       if (color == 1) {
-        ctx.strokeStyle = "hsla(346,98%,56%,0.25)";
+        ctx.strokeStyle = "#a855f7";
       } else {
-        ctx.strokeStyle = "hsla(171,98%,56%,0.25)";
+        ctx.strokeStyle = "#84cc16";
       }
 
       for (var i = 0, tendril; i < settings.trails; i++) {

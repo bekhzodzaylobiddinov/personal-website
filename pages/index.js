@@ -4,7 +4,8 @@ import Header from "../components/Header";
 import initOciliator from "../scripts/osciliator";
 import Loading from "../components/Loading";
 import Canvas from "../components/Canvas";
-
+import Landing from "../components/Landing";
+import Footer from "../components/Footer";
 export default function Home() {
   useEffect(() => {
     initOciliator(false);
@@ -19,6 +20,8 @@ export default function Home() {
       </Head>
       <Canvas width="813" height="894" />
       <Header />
+      <Landing />
+      <Footer />
     </>
   );
 }

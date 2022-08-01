@@ -2,7 +2,7 @@
 title: "AJAX and Fetch API"
 date: "June 5, 2021"
 excerpt: "Learn about AJAX requests and introduction of Fetch API in ES6"
-cover_image: "/images/posts/img2.jpg"
+cover_image: "/images/posts/img1.jpg"
 ---
 
 AJAX stands for Asynchronous JavaScript and XML and the term was coined by [Jesse James Garret](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/) in 2005.

@@ -2,7 +2,7 @@
 title: "🇺🇿 IT Sohasidagi Yo'nalishlar"
 date: "December 23, 2021"
 excerpt: "Siz front end misiz? yoki backend mi? yoki fullstack developer misiz…?"
-cover_image: "/images/posts/img1.jpg"
+cover_image: "/images/posts/img3.jpg"
 ---
 
 #### “Siz front end misiz? yoki backend mi? yoki fullstack developer misiz…?”

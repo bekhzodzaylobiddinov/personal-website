@@ -14,7 +14,7 @@ export default function Landing() {
           />
         </div>
         <div>
-          <div className="flex flex-col justify-center items-center rounded text-white">
+          <div className="flex flex-col justify-center items-center rounded dark:text-white">
             <h1 className="text-[3rem]">Zokir Rakhimov</h1>
             <p className="">
               SOFTWARE DEVELOPER <span className="text-purple-500">&&</span>{" "}

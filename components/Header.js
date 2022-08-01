@@ -2,6 +2,8 @@ import Logo from "./Logo";
 import Link from "next/link";
 import { useTheme } from "next-themes";
 import { useState, useEffect } from "react";
+import { SunIcon } from "@heroicons/react/solid";
+import { MoonIcon } from "@heroicons/react/outline";
 
 export default function Header() {
   const [mounted, setMounted] = useState(false);
@@ -11,31 +13,39 @@ export default function Header() {
   if (!mounted) return null;
 
   return (
-    <header className="bg-zinc-800 text-zinc-400 opacity-90 border-b border-zinc-600">
+    <header className="transition duration-300 bg-white text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 opacity-90 border-b dark:border-zinc-600">
       <nav className="flex px-5 space-x-5 items-center justify-end">
         <Logo />
         <Link href="#">
-          <a className="link hover:text-white active:text-purple-500">About</a>
+          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
+            About
+          </a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-white active:text-purple-500">
+          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
             Experience
           </a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-white active:text-purple-500">
+          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
             Contact
           </a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-white active:text-purple-500">Resume</a>
+          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
+            Resume
+          </a>
         </Link>
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center transition duration-300">
           <button
-            className="rounded p-2"
+            className="rounded p-2 flex-grow"
             onClick={() => setTheme(theme === "light" ? "dark" : "light")}
           >
-            Toggle to {theme === "light" ? "Dark" : "Light"}
+            {theme === "light" ? (
+              <MoonIcon className="h-6" />
+            ) : (
+              <SunIcon className="h-7" />
+            )}
           </button>
         </div>
       </nav>

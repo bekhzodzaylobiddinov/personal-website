@@ -1,7 +1,7 @@
 /* Inspired by https://jacekjeznach.com/ */
 /* This snippet is from https://jacekjeznach.com/wp-content/themes/new/js/vendor/osciliator.js */
 
-export default function initOciliator(remove) {
+export default function initOciliator(remove, theme) {
   if (!remove) {
     var ctx,
       hue,
@@ -177,9 +177,9 @@ export default function initOciliator(remove) {
       if (!ctx.running) return;
 
       ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = "#1D1D1D";
+      ctx.fillStyle = theme === "dark" ? "#1D1D1D" : "#FFFFFF";
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      ctx.globalCompositeOperation = "lighter";
+      ctx.globalCompositeOperation = "dark";
       ctx.strokeStyle = "hsla(346,98%,56%,0.25)";
       ctx.lineWidth = 1;
 

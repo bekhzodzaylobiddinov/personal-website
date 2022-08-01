@@ -1,15 +1,17 @@
 import Head from "next/head";
 import { useEffect, useState } from "react";
+import { useTheme } from "next-themes";
 import Header from "../components/Header";
 import initOciliator from "../scripts/osciliator";
 import Loading from "../components/Loading";
 import Canvas from "../components/Canvas";
 import Landing from "../components/Landing";
 import Footer from "../components/Footer";
-import { useTheme } from "next-themes";
 
 export default function Home() {
   const { theme, setTheme } = useTheme();
+
+  // Initiate Ociliator animation
   useEffect(() => {
     initOciliator(false, theme);
   }, [theme]);

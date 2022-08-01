@@ -239,7 +239,6 @@ export default function initOciliator(remove, theme) {
           save();
           break;
         default:
-        // console.log(event.keyCode);
       }
     }
 

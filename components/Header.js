@@ -16,9 +16,9 @@ export default function Header() {
     <header className="transition duration-300 bg-white text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 opacity-90 border-b dark:border-zinc-600">
       <nav className="flex px-5 space-x-5 items-center justify-end">
         <Logo />
-        <Link href="#">
+        <Link href="/blog">
           <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
-            About
+            Blog
           </a>
         </Link>
         <Link href="#">

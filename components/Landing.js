@@ -1,10 +1,23 @@
-import React from "react";
+import Image from "next/image";
 
 export default function Landing() {
   return (
-    <div className="flex flex-col h-96 justify-center items-center bg-purple-800 rounded opacity-90 text-white">
-      <h1 className="text-[48px]">Zokir Rakhimov</h1>
-      <p className="">DEVELOPER | YOUTUBER | INSTRUCTOR</p>
+    <div className="flex sm:flex-row flex-col justify-center items-center  mt-[5rem] space-x-5 whitespace-nowrap">
+      <div>
+        <Image
+          className="object-cover rounded-full"
+          src={"/portrait.png"}
+          width={150}
+          height={150}
+          alt={"portrait of Zokir"}
+        />
+      </div>
+      <div>
+        <div className="flex flex-col justify-center items-center rounded text-white">
+          <h1 className="text-[3rem]">Zokir Rakhimov</h1>
+          <p className="">DEVELOPER | YOUTUBER | INSTRUCTOR</p>
+        </div>
+      </div>
     </div>
   );
 }

@@ -7,18 +7,20 @@ export default function Header() {
       <nav className="flex px-5 space-x-5 items-center justify-end">
         <Logo />
         <Link href="#">
-          <a className="link hover:text-lime-500 active:text-white">About</a>
+          <a className="link hover:text-white active:text-purple-500">About</a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-lime-500 active:text-white">
+          <a className="link hover:text-white active:text-purple-500">
             Experience
           </a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-lime-500 active:text-white">Contact</a>
+          <a className="link hover:text-white active:text-purple-500">
+            Contact
+          </a>
         </Link>
         <Link href="#">
-          <a className="link hover:text-lime-500 active:text-white">Resume</a>
+          <a className="link hover:text-white active:text-purple-500">Resume</a>
         </Link>
       </nav>
     </header>

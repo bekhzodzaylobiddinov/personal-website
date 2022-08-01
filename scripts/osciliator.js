@@ -309,7 +309,6 @@ export default function initOciliator(remove, theme) {
     })();
 
     ctx = document.getElementById("canvas").getContext("2d");
-
     ctx.running = true;
     ctx.frame = 1;
 
@@ -321,6 +320,9 @@ export default function initOciliator(remove, theme) {
     });
 
     document.addEventListener("mousemove", init);
+    document.dispatchEvent(new Event("mousemove"));
+    document.addEventListener("mousemove", init);
+
     document.addEventListener("touchstart", init);
     document.body.addEventListener("orientationchange", resize);
     window.addEventListener("resize", resize);

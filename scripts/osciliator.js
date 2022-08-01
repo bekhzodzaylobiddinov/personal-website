@@ -171,7 +171,7 @@ export default function initOciliator(remove) {
       return Math.floor(Math.random() * (max - min + 1) + min);
     }
 
-    var color = randomIntFromInterval(1, 2);
+    var color = randomIntFromInterval(1, 1);
 
     function loop() {
       if (!ctx.running) return;

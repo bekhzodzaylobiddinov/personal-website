@@ -1,11 +1,15 @@
-import Logo from "./Logo";
-import Link from "next/link";
-import { useTheme } from "next-themes";
-import { useState, useEffect } from "react";
-import { SunIcon } from "@heroicons/react/solid";
-import { MoonIcon } from "@heroicons/react/outline";
+import Logo from './Logo';
+import Link from 'next/link';
+import { useTheme } from 'next-themes';
+import { useState, useEffect } from 'react';
+import { SunIcon } from '@heroicons/react/solid';
+import { MoonIcon } from '@heroicons/react/outline';
+import { useRouter } from 'next/router';
 
 export default function Header() {
+  const router = useRouter();
+  const currentRoute = router.pathname;
+
   const [mounted, setMounted] = useState(false);
   const { theme, setTheme } = useTheme();
 
@@ -14,10 +18,16 @@ export default function Header() {
 
   return (
     <header className="transition duration-300 bg-white text-zinc-600 dark:bg-zinc-800 dark:text-zinc-400 opacity-90 border-b dark:border-zinc-600">
-      <nav className="flex px-5 space-x-5 items-center justify-end">
+      <nav className="flex space-x-5 items-center justify-center">
         <Logo />
         <Link href="/blog">
-          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
+          <a
+            className={
+              currentRoute.includes('/blog')
+                ? 'active link hover:text-black dark:hover:text-white '
+                : 'link hover:text-black dark:hover:text-white'
+            }
+          >
             Blog
           </a>
         </Link>
@@ -38,14 +48,10 @@ export default function Header() {
         </Link>
         <div className="flex items-center justify-center transition duration-300">
           <button
-            className="rounded p-2 flex-grow"
-            onClick={() => setTheme(theme === "light" ? "dark" : "light")}
+            className="rounded w-16"
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
-            {theme === "light" ? (
-              <MoonIcon className="h-6" />
-            ) : (
-              <SunIcon className="h-7" />
-            )}
+            {theme === 'light' ? <MoonIcon className="h-6" /> : <SunIcon className="h-7" />}
           </button>
         </div>
       </nav>

@@ -1,37 +1,41 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import Link from "next/link";
-import { marked } from "marked";
-import Image from "next/image";
-export default function PostPage({
-  frontmatter: { title, date, cover_image },
-  slug,
-  content,
-}) {
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import { marked } from 'marked';
+import Image from 'next/image';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
+export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   return (
     <>
-      <Link href="/">
-        <a className="btn btn-back">Go Back</a>
-      </Link>
-      <div className="card card-page">
-        <h1 className="post-title">{title}</h1>
-        <div className="post-date">Posted on {date}</div>
-        <Image src={cover_image} width={300} height={200} alt="post image" />
-        <div className="post-body">
-          <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+      <Header />
+      <div className="container mx-auto px-[100px] shadow-lg mt-5 p-10">
+        <div className="card card-page">
+          <h1 className="">{title}</h1>
+          <div className="small pb-5 pt-1">Posted on {date}</div>
+          <Image
+            className="object-cover rounded"
+            src={cover_image}
+            width={1024}
+            height={768}
+            alt="post image"
+          />
+          <div className="text-lg text-gray-500 xl:mr-64 lg:mb-0 dark:text-gray-400">
+            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+          </div>
         </div>
       </div>
+      <Footer absolute={false} />
     </>
   );
 }
 
 export async function getStaticPaths() {
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join('posts'));
 
   const paths = files.map((filename) => ({
     params: {
-      slug: filename.replace(".md", ""),
+      slug: filename.replace('.md', ''),
     },
   }));
 
@@ -42,10 +46,7 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params: { slug } }) {
-  const markdownWithMeta = fs.readFileSync(
-    path.join("posts", slug + ".md"),
-    "utf-8"
-  );
+  const markdownWithMeta = fs.readFileSync(path.join('posts', slug + '.md'), 'utf-8');
 
   const { data: frontmatter, content } = matter(markdownWithMeta);
 

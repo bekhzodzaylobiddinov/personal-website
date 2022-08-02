@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 
 export default function Post({ post }) {
   return (
@@ -13,22 +13,15 @@ export default function Post({ post }) {
         />
       </a>
       <div className="p-5">
-        <div className="text-sm text-gray-500 mb-2">
-          Posted on {post.frontmatter.date}
-        </div>
+        <div className="text-sm text-gray-500 mb-2">Posted on {post.frontmatter.date}</div>
         <a href={`/blog/${post.slug}`}>
-          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {post.frontmatter.title}
-          </h5>
+          <h5>{post.frontmatter.title}</h5>
         </a>
 
         <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
           {post.frontmatter.excerpt}
         </p>
-        <a
-          href={`/blog/${post.slug}`}
-          className="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-        >
+        <a href={`/blog/${post.slug}`} className="btn">
           Read more
         </a>
       </div>

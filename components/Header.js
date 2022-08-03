@@ -31,21 +31,6 @@ export default function Header() {
             Blog
           </a>
         </Link>
-        <Link href="#">
-          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
-            Experience
-          </a>
-        </Link>
-        <Link href="#">
-          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
-            Contact
-          </a>
-        </Link>
-        <Link href="#">
-          <a className="link hover:text-black dark:hover:text-white active:text-purple-500">
-            Resume
-          </a>
-        </Link>
         <div className="flex items-center justify-center transition duration-300">
           <button
             className="rounded w-16"

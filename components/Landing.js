@@ -1,5 +1,5 @@
 import Image from 'next/image';
-
+import SocialLinks from '../components/SocialLinks';
 export default function Landing() {
   return (
     <>
@@ -15,17 +15,15 @@ export default function Landing() {
         </div>
         <div>
           <div className="flex flex-col justify-center items-center rounded dark:text-white transition duration-300">
-            <h1 className="text-[3rem]">Zokir Rakhimov</h1>
-            <p className="">
-              SOFTWARE DEVELOPER <span className="text-purple-500">&&</span> YOUTUBER
+            <h1 className="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl">
+              Zokir Rakhimov
+            </h1>
+            <p className="text-base text-gray-500 sm:mx-auto sm:max-w-xl sm:text-lg md:text-xl lg:mx-0">
+              Software Developer <span className="text-purple-500">&&</span> Youtuber
             </p>
+            <SocialLinks />
           </div>
         </div>
-      </div>
-      <div className="flex justify-center my-10 text-xl">
-        <button className="bg-black text-white dark:bg-white rounded py-3 px-5 transition duration-300 dark:text-black">
-          Learn More
-        </button>
       </div>
     </>
   );

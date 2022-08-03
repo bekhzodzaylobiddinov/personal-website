@@ -9,8 +9,15 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
   return (
     <>
       <Header />
-      <div className="container mx-auto px-[100px] shadow-lg mt-5 p-10">
-        <div className="card card-page">
+
+      <div className="container mx-auto shadow-lg mt-5 p-10">
+        <a
+          href="/blog"
+          className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
+        >
+          Go Back
+        </a>
+        <div className="card card-page my-5">
           <h1 className="">{title}</h1>
           <div className="small pb-5 pt-1">Posted on {date}</div>
           <Image
@@ -20,11 +27,18 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
             height={768}
             alt="post image"
           />
-          <div className="text-lg text-gray-500 xl:mr-64 lg:mb-0 dark:text-gray-400">
+          <div className="text-lg text-zinc-500 xl:mr-64 lg:mb-0 dark:text-zinc-400">
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
         </div>
+        <a
+          href="/blog"
+          className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
+        >
+          Go Back
+        </a>
       </div>
+
       <Footer absolute={false} />
     </>
   );

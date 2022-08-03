@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function Post({ post }) {
   return (
-    <div className="max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 dark:border-gray-700">
+    <div className="max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-zinc-800 dark:border-zinc-700">
       <a href={`/blog/${post.slug}`}>
         <Image
           className="rounded-t-md object-cover"

@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center  tracking-tight flex-wrap items-center mt-3 space-x-2 sm:space-x-3">
+    <div className="flex justify-center  tracking-tightflex-wrap items-center mt-3 space-x-2 sm:space-x-3">
       <a
         href="https://www.linkedin.com/in/zokir-rakhimov/"
         target="_blank"

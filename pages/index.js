@@ -1,23 +1,12 @@
 import Head from 'next/head';
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+
 import Header from '../components/Header';
-import initOciliator from '../scripts/osciliator';
 import Loading from '../components/Loading';
 import Canvas from '../components/Canvas';
 import Landing from '../components/Landing';
 import Footer from '../components/Footer';
-import SocialLinks from '../components/SocialLinks';
-import { CodeIcon, GlobeIcon } from '@heroicons/react/solid';
+
 export default function Home() {
-  const { theme, setTheme } = useTheme();
-
-  // Initiate Ociliator animation
-  useEffect(() => {
-    window.addEventListener('focus', () => initOciliator(false, theme));
-    initOciliator(false, theme);
-  }, [theme]);
-
   return (
     <div className="h-screen w-screen">
       <Head>

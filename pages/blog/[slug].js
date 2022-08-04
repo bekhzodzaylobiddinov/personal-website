@@ -31,12 +31,11 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
             <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
           </div>
         </div>
-        <a
-          href="/blog"
-          className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
-        >
-          Go Back
-        </a>
+        <Link href="/blog">
+          <button className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500">
+            Go Back
+          </button>
+        </Link>
       </div>
 
       <Footer absolute={false} />

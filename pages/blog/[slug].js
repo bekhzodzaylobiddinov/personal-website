@@ -5,18 +5,18 @@ import { marked } from 'marked';
 import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import Link from 'next/link';
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   return (
     <>
       <Header />
 
       <div className="container mx-auto shadow-lg mt-5 p-10">
-        <a
-          href="/blog"
-          className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
-        >
-          Go Back
-        </a>
+        <Link href="/blog">
+          <button className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500">
+            Go Back
+          </button>
+        </Link>
         <div className="card card-page my-5">
           <h1 className="">{title}</h1>
           <div className="small pb-5 pt-1">Posted on {date}</div>

@@ -1,5 +1,4 @@
 import Post from '../components/Post';
-import Canvas from '../components/Canvas';
 export default function PostList({ posts }) {
   return (
     <>
@@ -9,7 +8,7 @@ export default function PostList({ posts }) {
           <Post key={index} post={post} />
         ))}
       </div>
-      <Canvas />
+      <canvas id="canvas"></canvas>
     </>
   );
 }

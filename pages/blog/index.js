@@ -1,10 +1,10 @@
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import PostList from "../../components/PostList";
-import Head from "next/head";
-import Header from "../../components/Header";
-import Footer from "../../components/Footer";
+import fs from 'fs';
+import path from 'path';
+import matter from 'gray-matter';
+import PostList from '../../components/PostList';
+import Head from 'next/head';
+import Header from '../../components/Header';
+import Footer from '../../components/Footer';
 export default function BlogPage({ posts }) {
   return (
     <>
@@ -22,18 +22,15 @@ export default function BlogPage({ posts }) {
 
 export async function getStaticProps() {
   // Get files from posts directory
-  const files = fs.readdirSync(path.join("posts"));
+  const files = fs.readdirSync(path.join('posts'));
 
   // Get slug and frontmatter from posts
   const posts = files.map((filename) => {
     // Create slug
-    const slug = filename.replace(".md", "");
+    const slug = filename.replace('.md', '');
 
     // Get frontmatter
-    const markdownWithMeta = fs.readFileSync(
-      path.join("posts", filename),
-      "utf-8"
-    );
+    const markdownWithMeta = fs.readFileSync(path.join('posts', filename), 'utf-8');
     // Renames data to frontmatter
     const { data: frontmatter } = matter(markdownWithMeta);
     return {

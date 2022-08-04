@@ -37,6 +37,7 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
           </button>
         </Link>
       </div>
+      <canvas id="canvas"></canvas>
 
       <Footer absolute={false} />
     </>

@@ -14,6 +14,7 @@ export default function Home() {
 
   // Initiate Ociliator animation
   useEffect(() => {
+    window.addEventListener('focus', () => initOciliator(false, theme));
     initOciliator(false, theme);
   }, [theme]);
 

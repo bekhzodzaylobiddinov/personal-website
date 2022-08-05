@@ -23,12 +23,15 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
           <Image
             className="object-cover rounded"
             src={cover_image}
-            width={1024}
-            height={768}
+            width={2048}
+            height={600}
             alt="post image"
           />
           <div className="text-lg text-zinc-500 xl:mr-64 lg:mb-0 dark:text-zinc-400">
-            <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
+            <article
+              className="prose"
+              dangerouslySetInnerHTML={{ __html: marked.parse(content) }}
+            ></article>
           </div>
         </div>
         <Link href="/blog">
@@ -37,7 +40,6 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
           </button>
         </Link>
       </div>
-      <canvas id="canvas"></canvas>
 
       <Footer absolute={false} />
     </>

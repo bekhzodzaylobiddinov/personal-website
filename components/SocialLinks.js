@@ -1,15 +1,27 @@
 import Image from 'next/image';
+import LogoGithub from '../public/social/github.svg';
+import LogoLinkedIn from '../public/social/linkedin.svg';
+import LogoYoutube from '../public/social/youtube.svg';
+import LogoTwitter from '../public/social/twitter.svg';
+import LogoInsta from '../public/social/instagram.svg';
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center  tracking-tightflex-wrap items-center mt-3 space-x-2 sm:space-x-3">
+    <div className="flex justify-center flex-wrap items-center mt-3 space-x-2 sm:space-x-3 md:space-x-5">
       <a
         href="https://www.linkedin.com/in/zokir-rakhimov/"
         target="_blank"
         rel="noopener noreferrer"
-        className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
+        className=" cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
       >
-        LinkedIn
+        {/*https://github.com/vercel/next.js/discussions/20993*/}
+        <LogoLinkedIn
+          className="fill-[#0A66C2]"
+          src="/social/linkedin.svg"
+          width={32}
+          height={32}
+          alt="linkedin icon"
+        />
       </a>
 
       <a
@@ -18,7 +30,13 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
       >
-        YouTube
+        <LogoGithub
+          className="fill-[#181717] dark:fill-white"
+          src="/social/github.svg"
+          width={32}
+          height={32}
+          alt="github icon"
+        />
       </a>
       <a
         href="https://www.github.com/zrakhimov"
@@ -26,7 +44,13 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
       >
-        GitHub
+        <LogoInsta
+          className="fill-[#E4405F]"
+          src="/social/instagram.svg"
+          width={32}
+          height={32}
+          alt="instagram icon"
+        />
       </a>
       <a
         href="https://twitter.com/ZRakhimov/"
@@ -34,7 +58,13 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
       >
-        Twitter
+        <LogoTwitter
+          className="fill-[#1DA1F2]"
+          src="/social/twitter.svg"
+          width={32}
+          height={32}
+          alt="twitter icon"
+        />
       </a>
       <a
         href="https://www.instagram.com/zokir__rakhimov/"
@@ -42,7 +72,13 @@ export default function SocialLinks() {
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
       >
-        Instagram
+        <LogoYoutube
+          className="fill-[#FF0000]"
+          src="/social/youtube.svg"
+          width={32}
+          height={32}
+          alt="youtube icon"
+        />
       </a>
     </div>
   );

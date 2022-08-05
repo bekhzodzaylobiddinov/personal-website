@@ -7,7 +7,7 @@ import LogoInsta from '../public/social/instagram.svg';
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center flex-wrap items-center mt-3 space-x-5 sm:space-x-10 md:space-x-15">
+    <div className="flex justify-center flex-wrap items-center mt-4 space-x-5 sm:space-x-10 md:space-x-15">
       <a
         href="https://www.linkedin.com/in/zokir-rakhimov/"
         target="_blank"
@@ -25,7 +25,7 @@ export default function SocialLinks() {
       </a>
 
       <a
-        href="https://www.youtube.com/c/ZokirRakhimov"
+        href="https://www.github.com/zrakhimov"
         target="_blank"
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
@@ -39,7 +39,7 @@ export default function SocialLinks() {
         />
       </a>
       <a
-        href="https://www.github.com/zrakhimov"
+        href="https://www.instagram.com/zokir__rakhimov/"
         target="_blank"
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"
@@ -67,7 +67,7 @@ export default function SocialLinks() {
         />
       </a>
       <a
-        href="https://www.instagram.com/zokir__rakhimov/"
+        href="https://www.youtube.com/c/ZokirRakhimov"
         target="_blank"
         rel="noopener noreferrer"
         className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500"

@@ -10,7 +10,5 @@ export default function Canvas() {
     initOciliator(false, theme);
   }, [theme]);
 
-  return (
-    <canvas className="!absolute !left-0 !-z-10 bg-white dark:bg-[#1D1D1D]" id="canvas"></canvas>
-  );
+  return <canvas className="!absolute !left-0 !-z-10" id="canvas"></canvas>;
 }

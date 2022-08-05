@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 export default function Post({ post }) {
   return (
-    <div className="max-w-lg bg-white rounded-lg border border-gray-200 shadow-md dark:bg-zinc-800 dark:border-zinc-700">
+    <div className="max-w-lg bg-slate-50 rounded-lg border border-gray-200 shadow-md dark:bg-zinc-800 dark:border-zinc-700">
       <Image
         className="rounded-t-md"
         src={post.frontmatter.cover_image}

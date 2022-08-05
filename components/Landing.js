@@ -3,9 +3,10 @@ import SocialLinks from '../components/SocialLinks';
 export default function Landing() {
   return (
     <div className="px-10 sm:px-12 md:px-16 lg:px-[150px] xl:px-[256px] 2xl:px-[400px]">
-      <div className="relative group">
-        <div className="animate-tilt absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 blur-xl rounded-lg opacity-50 group-hover:opacity-100 transition group-hover:duration-300 duration-1000"></div>
-        <div className="z-30 mx-auto py-20 flex sm:flex-row flex-col justify-center items-center  mt-[5rem] space-x-5 whitespace-nowrap bg-white backdrop-blur-md rounded-lg border border-gray-200 shadow-md dark:bg-zinc-900 dark:border-zinc-700">
+      {/* <div className="relative group"> */}
+      {/* <div className="animate-tilt absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-600 blur-xl rounded-lg opacity-50 group-hover:opacity-100 transition group-hover:duration-300 duration-1000"></div> */}
+      <div>
+        <div className="z-30 mx-auto py-20 flex sm:flex-row flex-col justify-center items-center  mt-[5rem] space-x-5 whitespace-nowrap bg-slate-100/30 backdrop-blur-md rounded-lg border border-gray-200 shadow-md dark:bg-zinc-600/30 dark:border-zinc-700">
           <div className="">
             <Image
               className="object-cover rounded-full "

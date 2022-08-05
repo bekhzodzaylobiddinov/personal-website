@@ -18,7 +18,7 @@ export default function Home() {
       <Canvas />
       <Header />
       <Landing />
-      <Footer absolute={false} />
+      <Footer absolute={true} />
     </>
   );
 }

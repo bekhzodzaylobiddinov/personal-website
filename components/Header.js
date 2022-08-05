@@ -17,7 +17,7 @@ export default function Header() {
   if (!mounted) return null;
 
   return (
-    <header className="transition duration-300 backdrop-blur-md bg-white/30  text-zinc-600 dark:bg-zinc-800/30 dark:text-zinc-400 border-b dark:border-zinc-600">
+    <header className="transition duration-300 backdrop-blur-md bg-slate-50/30  text-zinc-600 dark:bg-zinc-600/30 dark:text-zinc-400 border-b dark:border-zinc-600">
       <nav className="flex space-x-5 items-center justify-center">
         <Logo />
         <Link

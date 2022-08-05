@@ -177,7 +177,7 @@ export default function initOciliator(remove, theme) {
       if (!ctx.running) return;
 
       ctx.globalCompositeOperation = 'source-over';
-      ctx.fillStyle = theme === 'dark' ? '#1D1D1D' : '#FFFFFF';
+      ctx.fillStyle = theme === 'dark' ? '#000000' : '#FFFFFF';
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
       ctx.globalCompositeOperation = 'dark';
       ctx.strokeStyle = 'hsla(346,98%,56%,0.25)';

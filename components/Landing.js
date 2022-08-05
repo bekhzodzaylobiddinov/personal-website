@@ -23,8 +23,8 @@ export default function Landing() {
               <p className="text-base text-gray-500 sm:mx-auto sm:max-w-xl sm:text-lg md:text-xl lg:mx-0">
                 Software Developer <span className="text-purple-500">&&</span> Youtuber
               </p>
-              <SocialLinks />
             </div>
+            <SocialLinks />
           </div>
         </div>
       </div>

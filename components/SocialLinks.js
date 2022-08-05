@@ -7,7 +7,7 @@ import LogoInsta from '../public/social/instagram.svg';
 
 export default function SocialLinks() {
   return (
-    <div className="flex justify-center flex-wrap items-center mt-3 space-x-2 sm:space-x-3 md:space-x-5">
+    <div className="flex justify-center flex-wrap items-center mt-3 space-x-5 sm:space-x-10 md:space-x-15">
       <a
         href="https://www.linkedin.com/in/zokir-rakhimov/"
         target="_blank"

@@ -6,18 +6,26 @@ import Image from 'next/image';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Link from 'next/link';
+import Prism from 'prismjs';
+import { useEffect } from 'react';
+require('prismjs/components/prism-javascript');
+require('prismjs/components/prism-css');
+require('prismjs/components/prism-jsx');
+
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   return (
     <>
       <Header />
-
-      <div className="container mx-auto shadow-lg mt-5 p-10">
+      <main className="container mx-auto shadow-lg mt-5 p-10 dark:border dark:border-zinc-600 rounded dark:bg-zinc-800">
         <Link href="/blog">
           <button className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500">
             Go Back
           </button>
         </Link>
-        <div className="card card-page my-5">
+        <section className="card card-page my-5">
           <h1 className="">{title}</h1>
           <div className="small pb-5 pt-1">Posted on {date}</div>
           <Image
@@ -27,20 +35,17 @@ export default function PostPage({ frontmatter: { title, date, cover_image }, sl
             height={600}
             alt="post image"
           />
-          <div className="text-lg text-zinc-500 xl:mr-64 lg:mb-0 dark:text-zinc-400">
-            <article
-              className="prose"
-              dangerouslySetInnerHTML={{ __html: marked.parse(content) }}
-            ></article>
-          </div>
-        </div>
+          <article
+            className="prose prose-zinc md:prose-lg lg:prose-xl dark:prose-invert max-w-full"
+            dangerouslySetInnerHTML={{ __html: marked.parse(content) }}
+          ></article>
+        </section>
         <Link href="/blog">
           <button className="cursor-pointer hover:underline underline-offset-4 decoration-purple-500">
             Go Back
           </button>
         </Link>
-      </div>
-
+      </main>
       <Footer absolute={false} />
     </>
   );

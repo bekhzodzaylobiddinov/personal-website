@@ -6,7 +6,7 @@ export default function Canvas() {
   const { theme, setTheme } = useTheme();
   // Initiate Ociliator animation
   useEffect(() => {
-    window.addEventListener('focus', () => initOciliator(false, theme));
+    document.getElementById('canvas').addEventListener('focus', () => initOciliator(false, theme));
     initOciliator(false, theme);
   }, [theme]);
 

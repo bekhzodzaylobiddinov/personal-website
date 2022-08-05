@@ -142,12 +142,12 @@ export default function initOciliator(remove, theme) {
     // ----------------------------------------------------------------------------------------
 
     function init(event) {
-      document.removeEventListener("mousemove", init);
-      document.removeEventListener("touchstart", init);
+      document.removeEventListener('mousemove', init);
+      document.removeEventListener('touchstart', init);
 
-      document.addEventListener("mousemove", mousemove);
-      document.addEventListener("touchmove", mousemove);
-      document.addEventListener("touchstart", touchstart);
+      document.addEventListener('mousemove', mousemove);
+      document.addEventListener('touchmove', mousemove);
+      document.addEventListener('touchstart', touchstart);
 
       mousemove(event);
       reset();
@@ -176,17 +176,17 @@ export default function initOciliator(remove, theme) {
     function loop() {
       if (!ctx.running) return;
 
-      ctx.globalCompositeOperation = "source-over";
-      ctx.fillStyle = theme === "dark" ? "#1D1D1D" : "#FFFFFF";
+      ctx.globalCompositeOperation = 'source-over';
+      ctx.fillStyle = theme === 'dark' ? '#1D1D1D' : '#FFFFFF';
       ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-      ctx.globalCompositeOperation = "dark";
-      ctx.strokeStyle = "hsla(346,98%,56%,0.25)";
+      ctx.globalCompositeOperation = 'dark';
+      ctx.strokeStyle = 'hsla(346,98%,56%,0.25)';
       ctx.lineWidth = 1;
 
       if (color == 1) {
-        ctx.strokeStyle = "#a855f7";
+        ctx.strokeStyle = '#a855f7';
       } else {
-        ctx.strokeStyle = "#84cc16";
+        ctx.strokeStyle = '#84cc16';
       }
 
       for (var i = 0, tendril; i < settings.trails; i++) {
@@ -244,40 +244,40 @@ export default function initOciliator(remove, theme) {
 
     function letters(id) {
       var el = document.getElementById(id),
-        letters = el.innerHTML.replace("&amp;", "&").split(""),
-        heading = "";
+        letters = el.innerHTML.replace('&amp;', '&').split(''),
+        heading = '';
 
       for (var i = 0, n = letters.length, letter; i < n; i++) {
-        letter = letters[i].replace("&", "&amp");
+        letter = letters[i].replace('&', '&amp');
         heading += letter.trim()
-          ? '<span class="letter-' + i + '">' + letter + "</span>"
-          : "&nbsp;";
+          ? '<span class="letter-' + i + '">' + letter + '</span>'
+          : '&nbsp;';
       }
 
       el.innerHTML = heading;
       setTimeout(function () {
-        el.className = "transition-in";
+        el.className = 'transition-in';
       }, Math.random() * 500 + 500);
     }
 
     function save() {
       if (!buffer) {
-        buffer = document.createElement("canvas");
+        buffer = document.createElement('canvas');
         buffer.width = screen.availWidth;
         buffer.height = screen.availHeight;
-        buffer.ctx = buffer.getContext("2d");
+        buffer.ctx = buffer.getContext('2d');
 
-        form = document.createElement("form");
-        form.method = "post";
-        form.input = document.createElement("input");
-        form.input.type = "hidden";
-        form.input.name = "data";
+        form = document.createElement('form');
+        form.method = 'post';
+        form.input = document.createElement('input');
+        form.input.type = 'hidden';
+        form.input.name = 'data';
         form.appendChild(form.input);
 
         document.body.appendChild(form);
       }
 
-      buffer.ctx.fillStyle = "rgba(8,5,16)";
+      buffer.ctx.fillStyle = 'rgba(8,5,16)';
       buffer.ctx.fillRect(0, 0, buffer.width, buffer.height);
 
       buffer.ctx.drawImage(
@@ -288,8 +288,8 @@ export default function initOciliator(remove, theme) {
 
       window.open(
         buffer.toDataURL(),
-        "wallpaper",
-        "top=0,left=0,width=" + buffer.width + ",height=" + buffer.height
+        'wallpaper',
+        'top=0,left=0,width=' + buffer.width + ',height=' + buffer.height
       );
 
       // form.input.value = buffer.toDataURL().substr(22);
@@ -307,7 +307,7 @@ export default function initOciliator(remove, theme) {
       );
     })();
 
-    ctx = document.getElementById("canvas").getContext("2d");
+    ctx = document.getElementById('canvas').getContext('2d');
     ctx.running = true;
     ctx.frame = 1;
 
@@ -318,25 +318,25 @@ export default function initOciliator(remove, theme) {
       offset: 285,
     });
 
-    document.addEventListener("mousemove", init);
-    document.dispatchEvent(new Event("mousemove"));
-    document.addEventListener("mousemove", init);
+    document.addEventListener('mousemove', init);
+    document.dispatchEvent(new Event('mousemove'));
+    document.addEventListener('mousemove', init);
 
-    document.addEventListener("touchstart", init);
-    document.body.addEventListener("orientationchange", resize);
-    window.addEventListener("resize", resize);
-    window.addEventListener("focus", start);
-    window.addEventListener("blur", stop);
+    document.addEventListener('touchstart', init);
+    document.body.addEventListener('orientationchange', resize);
+    window.addEventListener('resize', resize);
+    window.addEventListener('focus', start);
+    window.addEventListener('blur', stop);
 
     resize();
   } else {
-    document.body.removeEventListener("orientationchange", resize);
-    window.removeEventListener("resize", resize);
-    window.removeEventListener("focus", start);
-    window.removeEventListener("blur", stop);
+    document.body.removeEventListener('orientationchange', resize);
+    window.removeEventListener('resize', resize);
+    window.removeEventListener('focus', start);
+    window.removeEventListener('blur', stop);
 
-    document.removeEventListener("mousemove", mousemove);
-    document.removeEventListener("touchmove", mousemove);
-    document.removeEventListener("touchstart", touchstart);
+    document.removeEventListener('mousemove', mousemove);
+    document.removeEventListener('touchmove', mousemove);
+    document.removeEventListener('touchstart', touchstart);
   }
 }

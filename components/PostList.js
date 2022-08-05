@@ -8,7 +8,6 @@ export default function PostList({ posts }) {
           <Post key={index} post={post} />
         ))}
       </div>
-      <canvas id="canvas"></canvas>
     </>
   );
 }

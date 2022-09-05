@@ -5,6 +5,8 @@ excerpt: 'Siz front end misiz? yoki backend mi? yoki fullstack developer misiz�
 cover_image: '/images/posts/img3.jpg'
 ---
 
+<br>
+
 ## “Siz front end misiz? yoki backend mi? yoki fullstack developer misiz…?”
 
 <br><br>

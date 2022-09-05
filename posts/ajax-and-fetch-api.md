@@ -1,9 +1,11 @@
 ---
-title: "AJAX and Fetch API"
-date: "June 5, 2021"
-excerpt: "Learn about AJAX requests and introduction of Fetch API in ES6"
-cover_image: "/images/posts/img1.jpg"
+title: 'AJAX and Fetch API'
+date: 'June 5, 2021'
+excerpt: 'Learn about AJAX requests and introduction of Fetch API in ES6'
+cover_image: '/images/posts/img1.jpg'
 ---
+
+<br>
 
 AJAX stands for Asynchronous JavaScript and XML and the term was coined by [Jesse James Garret](http://adaptivepath.org/ideas/ajax-new-approach-web-applications/) in 2005.
 
@@ -28,11 +30,11 @@ var xhr = new XMLHttpRequest();
 xhr.onload = function () {
   //3. Get the data from `xhr` object's `responseText` property
   var data = this.responseText;
-  console.log("data arrived", data);
+  console.log('data arrived', data);
 };
 
 // 4. Create an HTTP GET request to given URL
-xhr.open("GET", "http://example.com/");
+xhr.open('GET', 'http://example.com/');
 
 // 5. Send created get request
 
@@ -79,7 +81,7 @@ So here we go.
 
 ```javascript
 // create an event listener which executes an AJAX request when the page is finished loading
-document.addEventListener("load", () => {
+document.addEventListener('load', () => {
   // Call a function which was defined below to get the bitcoin value
   getBitcoinValue();
 });
@@ -88,23 +90,23 @@ function getBitcoinValue() {
   // 1. Create an XMLHttpRequest object
   let xhr = new SMLHttpRequest();
   //  web service endpoint
-  let url = "https://blockchain.info/q/24hrprice?cors=true";
+  let url = 'https://blockchain.info/q/24hrprice?cors=true';
 
   // 2. Define what needs to be done when the data is received
   xhr.onload = () => {
     // 3. Save received data in a variable
     let response = this.responseText;
     // 4. Format it properly
-    let value = res + " USD";
+    let value = res + ' USD';
 
     // 5. Get the node from DOM where the data will be placed
-    let span = document.querySelector("#bitcoin-value");
+    let span = document.querySelector('#bitcoin-value');
     // 6. Put data inside that node
     span.innerHTML = value;
   };
 
   // 7. Now create GET request and send it
-  xhr.open("GET", url);
+  xhr.open('GET', url);
   xhr.send();
 }
 ```
@@ -193,17 +195,17 @@ Here's how the data might look like as an `Object Literal`
 ```javascript
 var products = [
   {
-    name: "Apple",
+    name: 'Apple',
     price: {
-      currency: "CAD",
+      currency: 'CAD',
       value: 1.29,
     },
     aisle: 3,
   },
   {
-    name: "Carrots",
+    name: 'Carrots',
     price: {
-      currency: "CAD",
+      currency: 'CAD',
       value: 0.46,
     },
     aisle: 2,
@@ -259,7 +261,7 @@ function getCurrencyRates() {
   // 1. Create XHR object
   let xhr = new XMLHttpRequest();
   // 2. Define url to use next
-  let url = "https://api.exchangeratesapi.io/latest?base=USD";
+  let url = 'https://api.exchangeratesapi.io/latest?base=USD';
 
   // 5. When the data comes back parse JSON and display on console log
   xhr.onload = function () {
@@ -267,11 +269,11 @@ function getCurrencyRates() {
       let data = JSON.parse(this.responseText);
       console.log(data);
     } catch (e) {
-      console.log("Error: ", e);
+      console.log('Error: ', e);
     }
   };
   // 3. Create GET request
-  xhr.open("GET", url);
+  xhr.open('GET', url);
   // 4. Send created request
   xhr.send();
 }
@@ -341,20 +343,18 @@ It uses the modern [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaSc
 Here's what our Currency Exchange example will look like using fetch()
 
 ```javascript
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   // Get bitcoin value
   getBitcoinValue();
 
-  document.querySelector("button").addEventListener("click", () => {
+  document.querySelector('button').addEventListener('click', () => {
     // Send a GET request to the URL
-    fetch("https://api.exchangeratesapi.io/latest?base=USD")
+    fetch('https://api.exchangeratesapi.io/latest?base=USD')
       // Put response into json form
       .then((response) => response.json())
       .then((data) => {
         // Get currency from user input and convert to upper case
-        const currency = document
-          .querySelector("#currency")
-          .value.toUpperCase();
+        const currency = document.querySelector('#currency').value.toUpperCase();
 
         // Get rate from data
         const rate = data.rates[currency];
@@ -362,17 +362,17 @@ window.addEventListener("load", () => {
         // Check if currency is valid:
         if (rate !== undefined) {
           // Display exchange on the screen
-          document.querySelector(
-            "#result"
-          ).innerHTML = `1 USD is equal to ${rate.toFixed(3)} ${currency}.`;
+          document.querySelector('#result').innerHTML = `1 USD is equal to ${rate.toFixed(
+            3
+          )} ${currency}.`;
         } else {
           // Display error on the screen
-          document.querySelector("#result").innerHTML = "Invalid Currency.";
+          document.querySelector('#result').innerHTML = 'Invalid Currency.';
         }
       })
       // Catch any errors and log them to the console
       .catch((error) => {
-        console.log("Error:", error);
+        console.log('Error:', error);
       });
   });
 });

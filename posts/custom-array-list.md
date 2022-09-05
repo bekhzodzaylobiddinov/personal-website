@@ -1,11 +1,11 @@
 ---
 title: 'Custom Array List'
 date: 'September 5, 2022'
-excerpt: 'Custom Array List Implementation'
+excerpt: 'Implementation of ArrayList which manages capacity automatically and has the ability to insert at any point in the list'
 cover_image: '/images/posts/img6.jpg'
 ---
 
-# Custom Array List
+<br>
 
 <b>Arrays</b> are a consecutive block of memory set at a certain length which stores information.
 

@@ -1,9 +1,11 @@
 ---
-title: "VIM Notes"
-date: "February 19, 2022"
+title: 'VIM Notes'
+date: 'February 19, 2022'
 excerpt: "Here's the most common commands I use in VIM"
-cover_image: "/images/posts/img4.jpg"
+cover_image: '/images/posts/img4.jpg'
 ---
+
+<br>
 
 Here's the most common commands I use in VIM
 

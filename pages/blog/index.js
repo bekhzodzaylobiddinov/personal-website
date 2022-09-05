@@ -5,6 +5,8 @@ import PostList from '../../components/PostList';
 import Head from 'next/head';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { sortByDate } from '../../utils';
+
 export default function BlogPage({ posts }) {
   return (
     <div className="bg-hero-pattern">
@@ -41,7 +43,7 @@ export async function getStaticProps() {
   });
   return {
     props: {
-      posts: posts,
+      posts: posts.sort(sortByDate),
     },
   };
 }

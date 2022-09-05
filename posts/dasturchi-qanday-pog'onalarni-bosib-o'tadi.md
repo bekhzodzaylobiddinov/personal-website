@@ -1,9 +1,11 @@
 ---
 title: "🇺🇿 Dasturchi Qanday Pog'onalarni Bosib O'tadi ?"
-date: "March 4, 2021"
+date: 'March 4, 2021'
 excerpt: "Dasturchi odatda bosib o'tadigan 5ta pog'onalarni ko'rib chiqamiz"
-cover_image: "/images/posts/img2.jpg"
+cover_image: '/images/posts/img2.jpg'
 ---
+
+<br>
 
 Hozirda internet da dasturlash tilini o’rganaman desangiz, resurslar juda ko’p. Qaysi tilni tanlashingizdan qat’iy nazar o’zbekcha video darsliklar yoki blog lardan informatsiya olsangiz bo’ladi.
 

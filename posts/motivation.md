@@ -1,11 +1,11 @@
 ---
-title: "Motivation"
-date: "February 19, 2022"
-excerpt: "Some links and quotes to read when lacking motivation"
-cover_image: "/images/posts/img5.jpg"
+title: 'Motivation'
+date: 'February 19, 2022'
+excerpt: 'Some links and quotes to read when lacking motivation'
+cover_image: '/images/posts/img5.jpg'
 ---
 
-# Lost Motivation?
+<br>
 
 Here are some of the links to check out:
 

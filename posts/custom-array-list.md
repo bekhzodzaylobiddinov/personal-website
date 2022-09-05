@@ -139,29 +139,73 @@ public void Index(int position, T element) {
 }
 ```
 
-### `void Insert(int, object)`
+### `void Clear()`
 
 ```cs
-
+public void Clear() {
+    // Reset to initial state - old array will be cleaned up by garbage collector
+    this.array = new T[DEFAULT_CAPACITY];
+    this.count = 0;
+}
 ```
 
-### `void Insert(int, object)`
+## Searching Operations
+
+### `int IndexOf(object)`
 
 ```cs
+// Returns the index of the first occurrence of the specified
+// element in this list (or -1 if it does not exist).
+public int IndexOf(T element) {
+    // Iterate through list and check if object matches
+    for(int i = 0; i < this.array.Length; i++ ) {
+        if(object.Equals(this.array[i],element)) {
+            return i;
+        }
+    }
 
+    // If nothing is found
+    return -1;
+}
 ```
 
-### `void Insert(int, object)`
+### `bool Contains(object)`
 
 ```cs
+// Checks if an element exists
+// We can use the IndexOf to get the index and go from there
+public bool Contains(T element) {
+    int index = IndexOf(element);
+    bool found = (index != -1);
 
+    return found;
+}
 ```
 
-### `void Insert(int, object)`
+### `this[int]`
 
 ```cs
+// Indexer: access to element at given index
+public T this[int index] {
+    get {
+        if(index > this.count || index < 0) {
+            throw new ArgumentOutOfRangeException($"Invalid index: {index}");
+        }
+        // otherwise
+        return this.array[index];
+    }
+    set {
+        if(index > this.count || index < 0) {
+            throw new ArgumentOutOfRangeException($"Invalid index: {index}");
+        }
+        // otherwise
+        this.array[index] = value;
+    }
 
+}
 ```
+
+## Removing Operations
 
 ### `void Insert(int, object)`
 

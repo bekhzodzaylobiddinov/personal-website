@@ -119,7 +119,7 @@ public void Add(T element) {
 > Copies a range of elements from an Array starting at the specified source index and pastes them to another Array starting at the specified destination index. The length and the indexes are specified as 64-bit integers.
 
 ```cs
-public void Index(int position, T element) {
+public void Insert(int position, T element) {
     // Check if the position passed is not out of bounds
     if(position > this.count || index < 0) {
         throw new IndexOutOfRangeException($"{position} is invalid");
@@ -207,14 +207,48 @@ public T this[int index] {
 
 ## Removing Operations
 
-### `void Insert(int, object)`
+There's two way of removing elements from the list
+
+- By index, returns removed element
+- By passing the element itself, returns index of removed element
+
+### `object RemoveAt(int)`
+
+> `public static void Copy (Array sourceArray, long sourceIndex, Array destinationArray, long destinationIndex, long length);`
+> Copies a range of elements from an Array starting at the specified source index and pastes them to another Array starting at the specified destination index. The length and the indexes are specified as 64-bit integers.
 
 ```cs
+// Removes element at the specified index
+public T RemoveAt(int index) {
+    // Make sure index is not out of range/bounds
+     if(index > this.count || index < 0) {
+            throw new ArgumentOutOfRangeException($"Invalid index: {index}");
+    }
 
+    // element to return
+    T element = this.arr[index];
+
+    // Rearrange array
+    Array.Copy(this.arr, index + 1,this.arr, index, this.count - index - 1);this.arr[this.count - 1] = default(T);
+
+    // Decrement count
+    this.count--;
+
+    return element;
+}
 ```
 
-### `void Insert(int, object)`
+### `int Remove(object)`
 
 ```cs
+//Removes the specified item, -1 if doesn't exist
+public int Remove(T element) {
+    // Find the index of the element to remove
+    int index = IndexOf(element);
+    if(index != -1) {
+        this.RemoveAt(index);
+    }
+}
+
 
 ```

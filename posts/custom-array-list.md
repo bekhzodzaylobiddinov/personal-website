@@ -88,7 +88,7 @@ public class ArrayList<T> {
 
 ## Basic methods
 
-Basic methods that the standard `IList` implements are as folows:
+Basic methods that the standard `IList` implements are as follows:
 
 - `int Add(object)` – adds element in the end of the list
 - `void Insert(int, object)` – adds element on a preliminary chosen position in the list
@@ -98,3 +98,79 @@ Basic methods that the standard `IList` implements are as folows:
 - `void RemoveAt(int)` – removes the element on a given position
 - `int IndexOf(object)` – returns the position of the element
 - `this[int]` – indexer, allows access to the elements on a set position
+
+Now let's implement custom methods of each of the above for our custom array list.
+
+### `int Add(element)`
+
+```cs
+public void Add(T element) {
+    // Check capacity and resize before adding
+    AutoResizeWhenFull();
+
+    this.array[count] = element;
+    count++;
+}
+```
+
+### `void Insert(int, object)`
+
+> `public static void Copy (Array sourceArray, long sourceIndex, Array destinationArray, long destinationIndex, long length);`
+> Copies a range of elements from an Array starting at the specified source index and pastes them to another Array starting at the specified destination index. The length and the indexes are specified as 64-bit integers.
+
+```cs
+public void Index(int position, T element) {
+    // Check if the position passed is not out of bounds
+    if(position > this.count || index < 0) {
+        throw new IndexOutOfRangeException($"{position} is invalid");
+    }
+
+    // Check capacity and resize before adding
+    AutoResizeWhenFull();
+
+    // Arrange array so that there's insertable space at given index
+    Array.Copy(this.array, index, this.array, index + 1, this.count - index);
+
+    // Insert to that index
+    this.arr[index] = element;
+
+    // Increment number of elements in the list
+    count++;
+}
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```
+
+### `void Insert(int, object)`
+
+```cs
+
+```

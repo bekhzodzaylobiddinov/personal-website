@@ -11,6 +11,7 @@ import { useEffect } from 'react';
 require('prismjs/components/prism-javascript');
 require('prismjs/components/prism-css');
 require('prismjs/components/prism-jsx');
+require('prismjs/components/prism-csharp');
 
 export default function PostPage({ frontmatter: { title, date, cover_image }, slug, content }) {
   useEffect(() => {

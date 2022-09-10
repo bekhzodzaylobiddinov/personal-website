@@ -2,7 +2,7 @@
 title: 'Hash Table Data Structure'
 date: 'September 10, 2022'
 excerpt: 'Explanation of what Hash Table is and strategies to prevent collisions'
-cover_image: '/images/posts/img6.jpg'
+cover_image: '/images/posts/img7.jpg'
 ---
 
 <br>
